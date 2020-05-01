@@ -1,0 +1,521 @@
+*{
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+html{ font-size: 62.5%;}
+:root{
+    --heading-font: 'Kaushan Script', cursive;
+    --btn-font: 'Kreon', serif;
+}
+.container{
+    display: grid;
+    grid-template-rows: 100vh;
+    background-image: url("./photo.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100% 110%, cover;
+}
+.page-1{
+    display: grid;
+    grid-template-rows: 10vh 60vh 30vh;
+    grid-template-areas: " gap "
+                        " piano "
+                        " piano-head ";
+}
+.gap{
+    /* background-color: chocolate; */
+}
+.piano{
+    /* background-color: coral; */
+    display: grid;
+    grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 1100px) minmax(1rem, 1fr);
+    grid-template-areas: " . piano-main . ";
+}
+.piano-main{
+    /* background: rgba(128, 128, 128, 0.76);
+    border: 4px solid #3d3d3d; */
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: inset 0 0 2px hsla(0,0%,0%,.2),
+                0 3px 1px hsla(0,0%,100%,.75),
+                0 -1px 1px 2px hsla(0,0%,0%,.1);
+    height: 30em;
+    left: 20%;
+    margin: -9.875em -13em;
+    position: absolute;
+    top: 30%;
+    width: 80%;
+    z-index: 1;
+}
+.piano-main:before {
+    background-color: #33180c;
+    bottom: -2.5em;
+    box-shadow: inset 0 1px 1px 1px hsla(0,0%,100%,.2),
+                inset 0 -2px 1px hsla(0,0%,0%,.4),
+                0 5px 50px hsla(0,0%,0%,.25),
+                0 20px 20px -15px hsla(0,0%,0%,.2),
+                0 30px 20px -15px hsla(0,0%,0%,.15),
+                0 40px 20px -15px hsla(0,0%,0%,.1);
+    content: '';
+    left: -2.5em;
+    position: absolute;
+    right: -2.5em;
+    top: -1em;
+    z-index: -1;
+}
+.piano-main:after {
+    background-color: #ffff;
+    box-shadow: 0 2px 1px hsla(0,0%,100%,.2),
+                0 -1px 1px 1px hsla(0,0%,0%,.4),
+                inset 0 2px 3px 1px hsla(0,0%,0%,.2),
+                inset 0 4px 3px 1px hsla(0,0%,0%,.2),
+                inset 0 6px 3px 1px hsla(0,0%,0%,.1);
+    content: '';
+    position: absolute;
+    left: -1.5em;
+    bottom: -1.5em;
+    right: -1.5em;
+    top: 0;
+    z-index: -1;
+}
+.black-set{
+    position: relative;
+    left: -2%;
+    width: 100%;
+    height: 45%;
+    z-index: 100;
+    /* background: lightsalmon; */
+    display: grid;
+    grid-template-columns: repeat(26, 5fr);
+    grid-template-areas: ". r1 . r2 . r3 . r4 . r5 . r6 . r7 . r8 . r9 . r10 . r11 . r12 . r13";
+}
+.white-set{
+    /* position: absolute; */
+    width: 100%;
+    height: 55%;
+    position: relative;
+    bottom: 10%;
+    /* background: mediumaquamarine; */
+    display: grid;
+    grid-template-columns: repeat(26, 5fr);
+    grid-template-areas: " t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12 t13 t14 t15 t16 t17 t18 t19 t20 t21 t22 t23 t24 t25 t26";
+}
+.t-add{
+    animation: t-anim 200ms ease-in-out;
+}
+@keyframes t-anim{
+    from{
+        background: #ffff;
+        color: black;
+        font-size: 2rem;
+    }
+    to{
+        background: #3d3d3d;
+        color: #ffff;
+        font-size: 4rem;
+    }
+}
+/* .t-remove{
+    animation: t-remove 500ms ease-in-out;
+}
+@keyframes t-remove{
+    from{
+        background: #3d3d3d;
+        color: #ffff;
+    }
+    to{
+        background: #ffff;
+        color: black;
+    }
+} */
+.t1,.t3,.t5,.t7,.t9,.t11,.t13,.t15,.t17,.t19,.t21,.t23,.t25{
+    border: 2px solid #3d3d3d;
+    background: #ffff;
+}
+.r1,.r3,.r5,.r7,.r9,.r11,.r13,.r15{
+    /* border: 2px solid black; */
+    background: black;
+}
+.t2,.t4,.t6,.t8,.t10,.t12,.t14,.t16,.t18,.t20,.t22,.t24,.t26{
+    border: 2px solid #3d3d3d;
+    background: #ffff;
+}
+.r2,.r4,.r6,.r8,.r10,.r12,.r14{
+    /* border: 2px solid black; */
+    background: #3d3d3d;
+}
+
+.t{
+    font-size: 2rem;
+    font-family: var(--btn-font);
+}
+.r,.s{
+    font-size: 2rem;
+    font-family: var(--btn-font);
+    color: #fff;
+}
+.r-add{
+    animation: r-anim 200ms ease-in-out;
+}
+@keyframes r-anim{
+    from{
+        background: black;
+        color: #ffff;
+        font-size: 2rem;
+    }
+    to{
+        background: #3d3d3d;
+        color: #ffff;
+        font-size: 4rem;
+    }
+}
+.s-add{
+    animation: s-anim 200ms ease-in-out;
+}
+@keyframes s-anim{
+    from{
+        background: #3d3d3d;
+        color: #ffff;
+        font-size: 2rem;
+    }
+    to{
+        background: black;
+        color: #ffff;
+        font-size: 4rem;
+    }
+}
+.piano-head{
+    /* background: darkcyan; */
+}
+.piano-head>h1{
+    font-size: 10rem;
+    font-family: var(--heading-font);
+    color: #ffff;
+}
+@media only screen and (max-width: 1200px){
+    @keyframes t-anim{
+        from{
+            background: #ffff;
+            color: black;
+            font-size: 2rem;
+        }
+        to{
+            background: #3d3d3d;
+            color: #ffff;
+            font-size: 2rem;
+        }
+    }
+    @keyframes r-anim{
+        from{
+            background: black;
+            color: #ffff;
+            font-size: 2rem;
+        }
+        to{
+            background: #3d3d3d;
+            color: #ffff;
+            font-size: 2rem;
+        }
+    }
+    @keyframes s-anim{
+        from{
+            background: #3d3d3d;
+            color: #ffff;
+            font-size: 2rem;
+        }
+        to{
+            background: black;
+            color: #ffff;
+            font-size: 2rem;
+        }
+    }
+}
+@media only screen and (max-width: 950px){
+    .piano-main{
+        height: 28em;
+        left: 25%;
+        margin: -9.875em -13em;
+        position: absolute;
+        top: 30%;
+        width: 80%;
+        z-index: 1;
+    }
+}
+@media only screen and (max-width: 800px){
+    .piano-main{
+        height: 28em;
+        left: 25%;
+        margin: -9.875em -13em;
+        position: absolute;
+        top: 30%;
+        width: 85%;
+        z-index: 1;
+    }
+    .piano-head>h1{
+        position: relative;
+        top: 10%;
+        font-size: 5rem;
+        font-family: var(--heading-font);
+        color: #ffff;
+    }
+}
+@media only screen and (max-width: 700px){
+    .piano-main{
+        height: 24em;
+        left: 27%;
+        margin: -9.875em -13em;
+        position: absolute;
+        top: 30%;
+        width: 85%;
+        z-index: 1;
+    }
+    .piano-head>h1{
+        font-size: 8rem;
+        font-family: var(--heading-font);
+        color: #ffff;
+    }
+}
+@media only screen and (max-width: 650px){
+    .piano-main{
+        height: 24em;
+        left: 29%;
+        margin: -9.875em -13em;
+        position: absolute;
+        top: 30%;
+        width: 85%;
+        z-index: 1;
+    }
+}
+@media only screen and (max-width: 600px){
+    .piano-main{
+        height: 20em;
+        left: 32%;
+        margin: -9.875em -13em;
+        position: absolute;
+        top: 30%;
+        width: 80%;
+        z-index: 1;
+    }
+    .t,.r,.s{
+        font-size: 1.5rem;
+    }
+    @keyframes t-anim{
+        from{
+            background: #ffff;
+            color: black;
+            font-size: 1.5rem;
+        }
+        to{
+            background: #3d3d3d;
+            color: #ffff;
+            font-size: 1.5rem;
+        }
+    }
+    @keyframes r-anim{
+        from{
+            background: black;
+            color: #ffff;
+            font-size: 1.5rem;
+        }
+        to{
+            background: #3d3d3d;
+            color: #ffff;
+            font-size: 1.5rem;
+        }
+    }
+    @keyframes s-anim{
+        from{
+            background: #3d3d3d;
+            color: #ffff;
+            font-size: 1.5rem;
+        }
+        to{
+            background: black;
+            color: #ffff;
+            font-size: 1.5rem;
+        }
+    }
+}
+@media only screen and (max-width: 550px){
+    .container{
+        display: grid;
+        grid-template-rows: 100vh;
+        background: lightsalmon;
+    }
+    .piano-main{
+        height: 20em;
+        left: 35%;
+        margin: -9.875em -13em;
+        position: absolute;
+        top: 30%;
+        width: 80%;
+        z-index: 1;
+    }
+    .piano-head>h1{
+        font-size: 5rem;
+        font-family: var(--heading-font);
+        color: black;
+    }
+}
+@media only screen and (max-width: 500px){
+    .piano-main{
+        height: 20em;
+        left: 39%;
+        margin: -9.875em -13em;
+        position: absolute;
+        top: 30%;
+        width: 80%;
+        z-index: 1;
+    }
+}
+@media only screen and (max-width: 500px){
+    .piano-main{
+        height: 18em;
+        left: 39%;
+        margin: -9.875em -13em;
+        position: absolute;
+        top: 40%;
+        width: 80%;
+        z-index: 1;
+    }
+
+    .t,.r,.s{
+        font-size: 1.3rem;
+    }
+    @keyframes t-anim{
+        from{
+            background: #ffff;
+            color: black;
+            font-size: 1.3rem;
+        }
+        to{
+            background: #3d3d3d;
+            color: #ffff;
+            font-size: 1.3rem;
+        }
+    }
+    @keyframes r-anim{
+        from{
+            background: black;
+            color: #ffff;
+            font-size: 1.3rem;
+        }
+        to{
+            background: #3d3d3d;
+            color: #ffff;
+            font-size: 1.3rem;
+        }
+    }
+    @keyframes s-anim{
+        from{
+            background: #3d3d3d;
+            color: #ffff;
+            font-size: 1.3rem;
+        }
+        to{
+            background: black;
+            color: #ffff;
+            font-size: 1.3rem;
+        }
+    }
+}
+@media only screen and (max-width: 450px){
+    .piano-main{
+        height: 18em;
+        left: 42%;
+        margin: -9.875em -13em;
+        position: absolute;
+        top: 40%;
+        width: 80%;
+        z-index: 1;
+    }
+}
+@media only screen and (max-width: 400px){
+    .piano-main{
+        height: 15em;
+        left: 44%;
+        margin: -9.875em -13em;
+        position: absolute;
+        top: 40%;
+        width: 80%;
+        z-index: 1;
+    }
+
+    .t,.r,.s{
+        font-size: 1rem;
+    }
+    @keyframes t-anim{
+        from{
+            background: #ffff;
+            color: black;
+            font-size: 1rem;
+        }
+        to{
+            background: #3d3d3d;
+            color: #ffff;
+            font-size: 1rem;
+        }
+    }
+    @keyframes r-anim{
+        from{
+            background: black;
+            color: #ffff;
+            font-size: 1rem;
+        }
+        to{
+            background: #3d3d3d;
+            color: #ffff;
+            font-size: 1rem;
+        }
+    }
+    @keyframes s-anim{
+        from{
+            background: #3d3d3d;
+            color: #ffff;
+            font-size: 1rem;
+        }
+        to{
+            background: black;
+            color: #ffff;
+            font-size: 1rem;
+        }
+    }
+    .piano-head>h1{
+        font-size: 4rem;
+        font-family: var(--heading-font);
+        color: black;
+    }
+}
+@media only screen and (max-width: 370px){
+    .piano-main{
+        height: 15em;
+        left: 47%;
+        margin: -9.875em -13em;
+        position: absolute;
+        top: 40%;
+        width: 80%;
+        z-index: 1;
+    }
+}
+@media only screen and (max-width: 350px){
+    .piano-main{
+        height: 15em;
+        left: 50%;
+        margin: -9.875em -13em;
+        position: absolute;
+        top: 40%;
+        width: 80%;
+        z-index: 1;
+        box-shadow: inset 0 0 2px hsla(0,0%,0%,.2),
+        0 3px 1px hsla(0,0%,100%,.75),
+        0 -1px 1px 2px hsla(0,0%,0%,.1);
+    }
+    .piano-main:before {
+        background-color: #33180c;
+        box-shadow:none;
+    }
+}
